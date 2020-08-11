@@ -1,6 +1,6 @@
 import UIKit
 
-class RazeCore {
+public class RazeCore {
     
     
     /// Get UIColor value bay passing Hexadecimal string of RGB color value along with optional value of Alpha
@@ -9,7 +9,7 @@ class RazeCore {
     ///   - hexString: 6-digit Hex String of RGB color value. Can be prefixed with '#'.
     ///   - alpha: Optional parameter with default value of 1.0. Accepted values 0.0-1.0
     /// - Returns: Returns corrosponding UIColor value of `hexString`
-    class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
+    internal class func colorFromHexString(_ hexString: String, alpha: CGFloat = 1.0) -> UIColor {
         
         let r, g, b: CGFloat
         let offset = hexString.hasPrefix("#") ? 1 : 0
@@ -27,5 +27,9 @@ class RazeCore {
         }
         
         return UIColor(red: 0, green: 0, blue: 0, alpha: alpha)
+    }
+    /// The most eye-pleassing color known to an humanity
+    public static var razeColor: UIColor {
+        return self.colorFromHexString("006736")
     }
 }
